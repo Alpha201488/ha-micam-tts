@@ -1,0 +1,54 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to micam-web",
+        "description": "Address and credentials of the micam-web bridge. On a LAN this is usually port 8080 (HTTP); if you use the self-signed 8443 listener, enable HTTPS and turn off certificate validation.",
+        "data": {
+          "host": "Host / IP",
+          "port": "Port",
+          "ssl": "Use HTTPS",
+          "verify_ssl": "Verify SSL certificate",
+          "username": "Username",
+          "password": "Password"
+        }
+      },
+      "voice": {
+        "title": "Default voice and speed",
+        "description": "Pick the default voice and speaking rate. You can change it later in the integration options.",
+        "data": {
+          "voice": "Voice",
+          "rate": "Speed"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid username or password",
+      "cannot_connect": "Cannot reach this address. Check IP, port and that micam-web is running"
+    },
+    "abort": {
+      "already_configured": "This address is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Default voice and speed",
+        "data": {
+          "voice": "Voice",
+          "rate": "Speed"
+        }
+      }
+    }
+  },
+  "services": {
+    "speak": {
+      "name": "Speak on camera",
+      "description": "Synthesize text and play it through the camera speaker."
+    },
+    "stop": {
+      "name": "Stop speaking",
+      "description": "End the current camera speaker session."
+    }
+  }
+}

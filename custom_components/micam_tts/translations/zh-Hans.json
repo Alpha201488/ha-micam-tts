@@ -1,0 +1,54 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "连接 micam-web",
+        "description": "填写 micam-web 服务的地址与登录凭据。局域网内通常是 8080（HTTP）；如果走 8443 自签证书，请打开 HTTPS 并关闭证书校验。",
+        "data": {
+          "host": "主机 / IP",
+          "port": "端口",
+          "ssl": "使用 HTTPS",
+          "verify_ssl": "校验 SSL 证书",
+          "username": "用户名",
+          "password": "密码"
+        }
+      },
+      "voice": {
+        "title": "默认音色与语速",
+        "description": "选择默认朗读音色和语速，之后可在集成选项里修改。",
+        "data": {
+          "voice": "音色",
+          "rate": "语速"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "用户名或密码不对",
+      "cannot_connect": "连不上这个地址，检查 IP、端口与 micam-web 是否在运行"
+    },
+    "abort": {
+      "already_configured": "这个地址已经配置过了"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "默认音色与语速",
+        "data": {
+          "voice": "音色",
+          "rate": "语速"
+        }
+      }
+    }
+  },
+  "services": {
+    "speak": {
+      "name": "让摄像头说话",
+      "description": "把文字转成语音，由摄像头喇叭播出。"
+    },
+    "stop": {
+      "name": "停止播报",
+      "description": "结束相机当前的喇叭会话。"
+    }
+  }
+}

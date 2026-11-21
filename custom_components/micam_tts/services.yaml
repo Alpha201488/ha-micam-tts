@@ -1,0 +1,42 @@
+speak:
+  name: 让摄像头说话
+  description: 把一段文字转成中文语音，直接由摄像头喇叭播出（走 micam-web 的 /tts 接口）。
+  fields:
+    text:
+      name: 文字
+      description: 要播报的内容，1–200 个字符。
+      required: true
+      example: 欢迎回家，晚饭已经好了
+      selector:
+        text:
+    voice:
+      name: 音色
+      description: 覆盖默认音色，例如 zh-CN-XiaoxiaoNeural。
+      required: false
+      example: zh-CN-XiaoxiaoNeural
+      selector:
+        text:
+    rate:
+      name: 语速
+      description: 相对语速，例如 +0%、-10%、+20%。
+      required: false
+      example: +0%
+      selector:
+        text:
+    entry_id:
+      name: 实例
+      description: 配了多个 micam-web 时用来指定其中一个，留空则用第一个。
+      required: false
+      selector:
+        text:
+
+stop:
+  name: 停止播报
+  description: 给相机发 0x108，结束当前喇叭会话（TTS 或音乐正在播放时用它）。
+  fields:
+    entry_id:
+      name: 实例
+      description: 配了多个 micam-web 时用来指定其中一个，留空则用第一个。
+      required: false
+      selector:
+        text:
